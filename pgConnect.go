@@ -47,11 +47,11 @@ func main() {
 	//Creating Schema If Needed
 	db.AutoMigrate(&Movie{})
 	//Insert Some Value
-	//db.Create(&Movie{Name: "RRR", Stars: "4.8", Description: "Action Epic Historical"})
+	db.Create(&Movie{Name: "RRR", Stars: "4.8", Description: "Action Epic Historical"})
 	//Retrieve Some Value
 	movie := retrieveTest(db)
 	//Update retrieved value (other attributes remain same only Stars changes)
-	db.Model(&movie).Updates(Movie{Stars: "3.1"})
+	db.Model(&movie).Updates(Movie{Stars: "4.1"})
 	//Delete the movie
 	db.Delete(&movie)
 	fmt.Println("DONE")
